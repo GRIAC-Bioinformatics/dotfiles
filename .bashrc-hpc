@@ -1,0 +1,30 @@
+export EDITOR='vim'
+export VISUAL="$EDITOR"
+export GROUP="$(echo "$(groups)" | cut -d\  -f2)"
+export dmPS1='\[\e[1;38;5;2m\]dm\[\e[0;38;5;167m\]@\[\e[38;5;214m\]\h\[\e[0m\] \[\e[38;5;245m\]>\[\e[0m\] '
+export myPS1='\[\e[38;5;167m\]@\[\e[38;5;214m\]\h\[\e[0m\] \[\e[38;5;245m\]>\[\e[0m\] '
+export PS1=$myPS1
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export PERL_MB_OPT="--install_base /home/$USER/perl5"
+export PERL_MM_OPT="INSTALL_BASE=/home/$USER/perl5"
+
+function dm() {
+  export PS1=$dmPS1
+  sudo -u "$GROUP-dm" bash
+  export PS1=$myPS1
+}
+
+
+alias R='R -q'
+
+alias sq="squeue -o '%.18i %.9P 5.9q %.35j %.20u %.8T %.10M %.9l %.6D %o'"
+alias squ="squeue --user=$USER -o '%.18i %.9P %.9q %.35j %.20u %.8T %.10M %.9l %.6D %o'"
+alias ftp_="sftp -P 22 $USER@cher-ami.hpc.rug.nl"
+
+alias proj="cd /groups/$GROUP/tmp01/projects/"
+alias raw="cd /groups/$GROUP/tmp01/rawdata/"
+
+
