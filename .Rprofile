@@ -22,15 +22,14 @@ tryCatch({
 	rm(user_groups, disks, tmp_disk)
 	
 	dir.create(paste0(new_libpath, "2"), showWarnings = FALSE, recursive = TRUE, mode = "0770")
+	.libPaths(
+		c(
+			new_libpath,
+			.libPaths()
+		)
+	)
 	rm(new_libpath)
 })
-
-.libPaths(
-	c(
-		new_libpath,
-		.libPaths()
-	)
-)
 
 
 formals(quit)$save <- formals(q)$save <- "no"
