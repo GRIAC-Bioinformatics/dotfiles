@@ -24,7 +24,5 @@ alias sq="squeue -o '%.18i %.9P 5.9q %.35j %.20u %.8T %.10M %.9l %.6D %o'"
 alias squ="squeue --user=$USER -o '%.18i %.9P %.9q %.35j %.20u %.8T %.10M %.9l %.6D %o'"
 alias ftp_="sftp -P 22 $USER@cher-ami.hpc.rug.nl"
 
-alias proj="cd /groups/$GROUP/tmp01/projects/"
-alias raw="cd /groups/$GROUP/tmp01/rawdata/"
-
-
+alias proj="cd /groups/$GROUP/tmp*/projects/"
+alias raw="cd /groups/$GROUP/tmp*/rawdata/"
