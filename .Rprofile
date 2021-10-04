@@ -21,7 +21,7 @@ tryCatch({
 	new_libpath <- file.path(tmp_disk, "projects", user_groups[1], "R")
 	rm(user_groups, disks, tmp_disk)
 	
-	dir.create(paste0(new_libpath, "2"), showWarnings = FALSE, recursive = TRUE, mode = "0770")
+	dir.create(new_libpath, showWarnings = FALSE, recursive = TRUE, mode = "0770")
 	.libPaths(
 		c(
 			new_libpath,
